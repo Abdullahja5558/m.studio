@@ -96,7 +96,7 @@ export default function ProjectSection() {
             >
               {/* Wrap Image in Link for Navigation */}
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <div className="overflow-hidden rounded-sm bg-zinc-200 aspect-[16/10] md:aspect-auto md:h-[600px] relative">
+                <div className="overflow-hidden rounded-sm bg-zinc-200 aspect-16/10 md:aspect-auto md:h-[600px] relative">
                   <motion.img 
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
