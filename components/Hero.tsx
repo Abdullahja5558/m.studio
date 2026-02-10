@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // Navigation import
+import { useRouter } from 'next/navigation';
 
 const PremiumHero = () => {
-  const router = useRouter(); // Initialize router
+  const router = useRouter();
 
   const maskTransition = { duration: 1.4, ease: [0.19, 1, 0.22, 1] as const };
 
@@ -25,7 +25,6 @@ const PremiumHero = () => {
   };
 
   const handleNavigation = () => {
-    // Navigate to /builder page
     router.push('/builder');
   };
 
@@ -70,7 +69,6 @@ const PremiumHero = () => {
                 transition={{ ...maskTransition, delay: 0.4 }}
               >
                 own dream <span className='bg-black text-white px-2 py-1 rounded'>portfolio</span>
-      
               </motion.span>
             </div>
           </h1>
@@ -104,13 +102,21 @@ const PremiumHero = () => {
                   />
                 ))}
 
-                {/* Main Button with onClick */}
+                {/* Main Button with Liquid Animation */}
                 <button 
                   onClick={handleNavigation}
                   className="group relative h-44 w-44 rounded-full border border-zinc-200 bg-white overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 z-10 cursor-pointer"
                 >
-                  {/* Internal Background Fill */}
-                  <div className="absolute inset-0 bg-black translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.19,1,0.22,1]" />
+                  {/* --- LIQUID WAVE EFFECT --- */}
+                  <div className="absolute top-[100%] left-[-10%] w-[200%] h-[200%] bg-black rounded-[40%] transition-all duration-700 ease-in-out group-hover:top-[-10%] group-hover:animate-[wave_70s_infinite_linear] pointer-events-none" />
+                  
+                  {/* CSS for Animation */}
+                  <style jsx>{`
+                    @keyframes wave {
+                      from { transform: rotate(0deg); }
+                      to { transform: rotate(360deg); }
+                    }
+                  `}</style>
 
                   {/* Icon and Text */}
                   <div className="relative z-10 flex flex-col items-center text-zinc-950 group-hover:text-white transition-colors duration-500">
@@ -138,7 +144,6 @@ const PremiumHero = () => {
           <div className="w-[1px] h-20 bg-gradient-to-b from-zinc-200 to-transparent" />
         </motion.div>
       </div>
-
     </section>
   );
 };
