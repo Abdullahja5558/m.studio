@@ -67,8 +67,7 @@ export default function PremiumFooter() {
             <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-2">Social</span>
             {[
               { name: 'Instagram', icon: Instagram, link: "https://www.instagram.com/mian.abdullah.9" },
-              { name: 'Twitter', icon: Twitter, link: "#" },
-              { name: 'LinkedIn', icon: Linkedin, link: "#" },
+              
               { name: 'GitHub', icon: Github, link: "https://github.com/Abdullahja5558" },
             ].map((social) => (
               <a key={social.name} href={social.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-zinc-900 font-bold hover:text-zinc-400 transition-colors group">
@@ -82,7 +81,7 @@ export default function PremiumFooter() {
           <div className="md:col-span-3">
             <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4 block">Location</span>
             <p className="text-zinc-900 font-bold leading-tight">
-              Based in Lahore, Pakistan <br />
+              Based in FSD, Pakistan <br />
               <span className="text-zinc-400 font-medium">Available Worldwide</span>
             </p>
             <div className="mt-8 p-4 bg-zinc-50 rounded-2xl border border-zinc-100 inline-flex items-center gap-3">
