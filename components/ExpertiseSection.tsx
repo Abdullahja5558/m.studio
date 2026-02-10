@@ -26,9 +26,12 @@ export default function ExpertiseSection() {
   const containerRef = useRef(null);
 
   return (
-    // Background remains #FAFAFA as requested
-    <section ref={containerRef} className="relative bg-[#FAFAFA] py-24 md:py-32 overflow-hidden"
-    id='expertise'>
+    // Added selection:bg-black selection:text-white
+    <section 
+      ref={containerRef} 
+      className="relative bg-[#FAFAFA] py-24 md:py-32 overflow-hidden selection:bg-black selection:text-white"
+      id='expertise'
+    >
       <div className="container mx-auto px-6 lg:px-24 relative z-10">
         
         {/* Header Section */}
@@ -46,7 +49,7 @@ export default function ExpertiseSection() {
           </motion.div>
           
           <h2 className="text-4xl md:text-7xl font-medium tracking-tight text-zinc-900 max-w-4xl leading-[1.1]">
-            We bridge the gap between <span className="text-zinc-400">imagination</span> and digital reality.
+            We bridge the gap between <span className="text-zinc-400">imagination</span> and <span className="bg-black text-white px-3 py-1 italic font-bold">digital reality.</span>
           </h2>
         </div>
 

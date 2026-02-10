@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { 
   Plus, Monitor, Smartphone, ChevronLeft, Menu, Check, 
-  Trash2, GripVertical, Image as ImageIcon, Wand2, X, Upload, Download, Link as LinkIcon, Home, FileText
+  Trash2, GripVertical, Image as ImageIcon, Wand2, X, Upload, Download, Link as LinkIcon, Home, FileText,
+  ArrowLeft // Added for the back button
 } from 'lucide-react';
+import { useRouter } from 'next/navigation'; // Added for navigation
 
 // --- CONFIGURATION ---
 const THEMES = [
@@ -24,6 +26,8 @@ const FONTS = [
 ];
 
 export default function ArchitectBuilder() {
+  const router = useRouter(); // Initialize router
+  
   // --- STATE MANAGEMENT ---
   const [pages, setPages] = useState<any[]>([
     { 
@@ -183,13 +187,22 @@ export default function ArchitectBuilder() {
   };
 
   return (
-    <div className={`h-screen w-full flex overflow-hidden ${currentFont.class} bg-[#F4F4F5] text-zinc-900`}>
+    <div className={`h-screen w-full flex overflow-hidden ${currentFont.class} bg-[#F4F4F5] text-zinc-900 selection:bg-black selection:text-white`}>
       
       {/* SIDEBAR */}
       <motion.aside animate={{ width: isSidebarOpen ? 400 : 0, opacity: isSidebarOpen ? 1 : 0 }} className="bg-white border-r border-zinc-200 flex flex-col z-50 relative overflow-hidden shadow-2xl">
         <div className="w-[400px] h-full flex flex-col">
+          
+          {/* Sidebar Top Header with Back Button */}
           <div className="p-8 border-b border-zinc-100 flex items-center justify-between">
             <div className="flex items-center gap-4">
+              <button 
+                onClick={() => router.push('/')} 
+                className="p-2 hover:bg-zinc-100 rounded-xl transition-all group cursor-pointer"
+                title="Back to Studio"
+              >
+                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+              </button>
               <div className="w-10 h-10 bg-black flex items-center justify-center rounded-2xl rotate-3 overflow-hidden shadow-lg">
                 {logo ? <img src={logo} className="w-full h-full object-cover" /> : <span className="text-white font-black italic text-lg">M.</span>}
               </div>
@@ -198,28 +211,28 @@ export default function ArchitectBuilder() {
                 <span className="text-[10px] font-bold text-zinc-400 uppercase">Multi-Page v4.5</span>
               </div>
             </div>
-            <button onClick={() => setIsSidebarOpen(false)} className="text-zinc-300 hover:text-black"><ChevronLeft size={20}/></button>
+            <button onClick={() => setIsSidebarOpen(false)} className="text-zinc-300 hover:text-black cursor-pointer"><ChevronLeft size={20}/></button>
           </div>
 
           <div className="flex px-8 pt-6 gap-8 border-b border-zinc-50 text-[10px] font-black uppercase tracking-widest text-zinc-400">
-            <button onClick={() => setActiveTab('pages')} className={`${activeTab === 'pages' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all`}>Pages</button>
-            <button onClick={() => setActiveTab('content')} className={`${activeTab === 'content' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all`}>Content</button>
-            <button onClick={() => setActiveTab('styles')} className={`${activeTab === 'styles' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all`}>Styles</button>
+            <button onClick={() => setActiveTab('pages')} className={`${activeTab === 'pages' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all cursor-pointer`}>Pages</button>
+            <button onClick={() => setActiveTab('content')} className={`${activeTab === 'content' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all cursor-pointer`}>Content</button>
+            <button onClick={() => setActiveTab('styles')} className={`${activeTab === 'styles' ? 'text-black border-b-2 border-black' : ''} pb-3 transition-all cursor-pointer`}>Styles</button>
           </div>
 
           <div className="flex-1 overflow-y-auto p-8 custom-scrollbar">
             {activeTab === 'pages' && (
               <div className="space-y-4">
-                <button onClick={addPage} className="w-full py-4 border-2 border-dashed border-zinc-100 rounded-2xl flex items-center justify-center gap-2 text-[10px] font-black uppercase text-zinc-400 hover:border-black hover:text-black transition-all">
+                <button onClick={addPage} className="w-full py-4 border-2 border-dashed border-zinc-100 rounded-2xl flex items-center justify-center gap-2 text-[10px] font-black uppercase text-zinc-400 hover:border-black hover:text-black transition-all cursor-pointer">
                   <Plus size={14}/> Add New Page
                 </button>
                 {pages.map(page => (
                   <div key={page.id} onClick={() => setActivePageId(page.id)} className={`p-4 rounded-2xl border flex items-center justify-between cursor-pointer transition-all ${activePageId === page.id ? 'bg-black text-white border-black shadow-xl scale-[1.02]' : 'bg-zinc-50 border-zinc-100 text-zinc-500 hover:bg-zinc-100'}`}>
                     <div className="flex items-center gap-3">
                       <FileText size={14}/>
-                      <input className="bg-transparent border-none p-0 focus:ring-0 font-black text-[10px] uppercase tracking-widest w-24" value={page.name} onChange={(e) => setPages(pages.map(p => p.id === page.id ? {...p, name: e.target.value} : p))} />
+                      <input className="bg-transparent border-none p-0 focus:ring-0 font-black text-[10px] uppercase tracking-widest w-24 cursor-text" value={page.name} onChange={(e) => setPages(pages.map(p => p.id === page.id ? {...p, name: e.target.value} : p))} onClick={(e) => e.stopPropagation()} />
                     </div>
-                    {pages.length > 1 && <Trash2 size={14} className="opacity-40 hover:text-red-500" onClick={(e) => deletePage(page.id, e)}/>}
+                    {pages.length > 1 && <Trash2 size={14} className="opacity-40 hover:text-red-500 cursor-pointer" onClick={(e) => deletePage(page.id, e)}/>}
                   </div>
                 ))}
               </div>
@@ -229,7 +242,7 @@ export default function ArchitectBuilder() {
               <div className="space-y-6">
                 <div className="grid grid-cols-2 gap-2">
                   {['Hero', 'Projects', 'Skills', 'Contact'].map(type => (
-                    <button key={type} onClick={() => addSection(type)} className="p-3 bg-zinc-50 border border-zinc-100 rounded-xl text-[9px] font-black uppercase text-zinc-500 hover:bg-black hover:text-white transition-all">+ {type}</button>
+                    <button key={type} onClick={() => addSection(type)} className="p-3 bg-zinc-50 border border-zinc-100 rounded-xl text-[9px] font-black uppercase text-zinc-500 hover:bg-black hover:text-white transition-all cursor-pointer">+ {type}</button>
                   ))}
                 </div>
                 <Reorder.Group axis="y" values={activePage.sections} onReorder={updateSections} className="space-y-4">
@@ -237,7 +250,7 @@ export default function ArchitectBuilder() {
                     <Reorder.Item key={section.id} value={section} className="p-5 bg-white border border-zinc-100 rounded-3xl shadow-sm">
                       <div className="flex justify-between items-center mb-4">
                         <span className="text-[9px] font-black uppercase opacity-40">{section.type}</span>
-                        <button onClick={() => updateSections(activePage.sections.filter((s:any) => s.id !== section.id))}><Trash2 size={14} className="text-zinc-300 hover:text-red-500"/></button>
+                        <button onClick={() => updateSections(activePage.sections.filter((s:any) => s.id !== section.id))} className="cursor-pointer"><Trash2 size={14} className="text-zinc-300 hover:text-red-500"/></button>
                       </div>
                       <input className="w-full font-black text-sm uppercase mb-3 bg-transparent border-none p-0 focus:ring-0" value={section.title} onChange={(e) => updateSections(activePage.sections.map((s:any) => s.id === section.id ? {...s, title: e.target.value} : s))} />
                       {section.items ? (
@@ -269,7 +282,7 @@ export default function ArchitectBuilder() {
                   <label className="text-[10px] font-black uppercase opacity-40 block mb-4">Color Palette</label>
                   <div className="grid gap-2">
                     {THEMES.map(t => (
-                      <button key={t.id} onClick={() => setCurrentTheme(t)} className={`p-4 flex justify-between items-center rounded-2xl border ${currentTheme.id === t.id ? 'bg-black text-white border-black shadow-lg' : 'bg-white text-zinc-500 border-zinc-100 hover:bg-zinc-50'}`}>
+                      <button key={t.id} onClick={() => setCurrentTheme(t)} className={`p-4 flex justify-between items-center rounded-2xl border cursor-pointer ${currentTheme.id === t.id ? 'bg-black text-white border-black shadow-lg' : 'bg-white text-zinc-500 border-zinc-100 hover:bg-zinc-50'}`}>
                         <span className="text-xs font-bold">{t.name}</span>
                         <div className="flex gap-1"><div className="w-3 h-3 rounded-full" style={{background: t.bg}}/><div className="w-3 h-3 rounded-full" style={{background: t.text}}/></div>
                       </button>
@@ -280,7 +293,7 @@ export default function ArchitectBuilder() {
                   <label className="text-[10px] font-black uppercase opacity-40 block mb-4">Typography</label>
                   <div className="grid gap-2">
                     {FONTS.map(f => (
-                      <button key={f.name} onClick={() => setCurrentFont(f)} className={`p-4 text-left rounded-2xl border text-sm transition-all ${currentFont.name === f.name ? 'bg-black text-white border-black shadow-lg' : 'bg-white text-zinc-600 border-zinc-100 hover:bg-zinc-50'}`}>{f.name}</button>
+                      <button key={f.name} onClick={() => setCurrentFont(f)} className={`p-4 text-left rounded-2xl border text-sm transition-all cursor-pointer ${currentFont.name === f.name ? 'bg-black text-white border-black shadow-lg' : 'bg-white text-zinc-600 border-zinc-100 hover:bg-zinc-50'}`}>{f.name}</button>
                     ))}
                   </div>
                 </section>
@@ -293,18 +306,18 @@ export default function ArchitectBuilder() {
       {/* CANVAS */}
       <main className="flex-1 flex flex-col relative bg-zinc-100/30 overflow-hidden">
         <header className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-6 bg-white/90 backdrop-blur-xl border border-zinc-200 px-8 py-3.5 rounded-full z-40 shadow-2xl">
-          {!isSidebarOpen && <button onClick={() => setIsSidebarOpen(true)} className="p-1 hover:bg-zinc-100 rounded-full"><Menu size={18}/></button>}
+          {!isSidebarOpen && <button onClick={() => setIsSidebarOpen(true)} className="p-1 hover:bg-zinc-100 rounded-full cursor-pointer"><Menu size={18}/></button>}
           <div className="flex bg-zinc-100 p-1 rounded-xl">
-            <button onClick={() => setViewMode('desktop')} className={`p-2 rounded-lg transition-all ${viewMode === 'desktop' ? 'bg-white shadow text-black' : 'text-zinc-400'}`}><Monitor size={14} /></button>
-            <button onClick={() => setViewMode('mobile')} className={`p-2 rounded-lg transition-all ${viewMode === 'mobile' ? 'bg-white shadow text-black' : 'text-zinc-400'}`}><Smartphone size={14} /></button>
+            <button onClick={() => setViewMode('desktop')} className={`p-2 rounded-lg transition-all cursor-pointer ${viewMode === 'desktop' ? 'bg-white shadow text-black' : 'text-zinc-400'}`}><Monitor size={14} /></button>
+            <button onClick={() => setViewMode('mobile')} className={`p-2 rounded-lg transition-all cursor-pointer ${viewMode === 'mobile' ? 'bg-white shadow text-black' : 'text-zinc-400'}`}><Smartphone size={14} /></button>
           </div>
           <div className="h-4 w-[1px] bg-zinc-200 mx-2" />
           <div className="flex gap-6 text-[10px] font-black uppercase tracking-widest text-zinc-300">
             {pages.map(p => (
-              <button key={p.id} onClick={() => setActivePageId(p.id)} className={`transition-all ${activePageId === p.id ? 'text-black underline underline-offset-4' : 'hover:text-zinc-500'}`}>{p.name}</button>
+              <button key={p.id} onClick={() => setActivePageId(p.id)} className={`transition-all cursor-pointer ${activePageId === p.id ? 'text-black underline underline-offset-4' : 'hover:text-zinc-500'}`}>{p.name}</button>
             ))}
           </div>
-          <button onClick={exportToHTML} className="bg-black text-white text-[10px] px-6 py-2 rounded-xl font-black uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+          <button onClick={exportToHTML} className="bg-black text-white text-[10px] px-6 py-2 rounded-xl font-black uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2 cursor-pointer">
             <Download size={14} /> Export Site
           </button>
         </header>
