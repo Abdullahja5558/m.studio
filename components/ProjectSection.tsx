@@ -10,7 +10,7 @@ interface Project {
   category: string;
   image: string;
   size: 'large' | 'small';
-  link: string; // Added link property
+  link: string;
 }
 
 const PROJECTS: Project[] = [
@@ -20,7 +20,7 @@ const PROJECTS: Project[] = [
     category: "Visual Identity",
     image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=1000",
     size: 'large',
-    link: 'https://aj-code.vercel.app' // First project link
+    link: 'https://aj-code.vercel.app'
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const PROJECTS: Project[] = [
     category: "Web Design",
     image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?auto=format&fit=crop&q=80&w=1000",
     size: 'small',
-    link: 'https://brittanychiang.com/' // Second project link
+    link: 'https://brittanychiang.com/'
   },
   {
     id: 3,
@@ -36,13 +36,14 @@ const PROJECTS: Project[] = [
     category: "Interaction",
     image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1000",
     size: 'small',
-    link: 'https://www.olivier-guilleux.com/' // Third project (Amazing random portfolio)
+    link: 'https://www.olivier-guilleux.com/'
   }
 ];
 
 export default function ProjectSection() {
   return (
-    <section className="bg-[#FAFAFA] py-32 px-6 lg:px-24" id='work'>
+    /* Added selection:bg-black and selection:text-white here */
+    <section className="bg-[#FAFAFA] py-32 px-6 lg:px-24 selection:bg-black selection:text-white" id='work'>
       <div className="container mx-auto">
         
         {/* Section Header */}
@@ -64,7 +65,7 @@ export default function ProjectSection() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               className="text-4xl md:text-6xl font-extrabold tracking-tight text-zinc-950"
             >
-              Crafted with <span className="italic font-serif font-light text-zinc-400">precision.</span>
+              Crafted <span className='text-zinc-600'>with</span> <span className="bg-black text-white font-bold italic px-2">precision.</span>
             </motion.h2> 
           </div>
           
@@ -95,7 +96,7 @@ export default function ProjectSection() {
               )}
             >
               {/* Wrap Image in Link for Navigation */}
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer block">
                 <div className="overflow-hidden rounded-sm bg-zinc-200 aspect-16/10 md:aspect-auto md:h-150 relative">
                   <motion.img 
                     whileHover={{ scale: 1.05 }}
@@ -130,7 +131,7 @@ export default function ProjectSection() {
         <div className="mt-32 flex justify-center">
           <motion.button
             whileHover={{ y: -5 }}
-            className="flex items-center gap-4 group"
+            className="flex items-center gap-4 group cursor-pointer"
           >
             <span className="text-sm font-bold uppercase tracking-[0.3em] text-zinc-950">View all archives</span>
             <div className="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-500">
