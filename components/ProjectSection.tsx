@@ -74,7 +74,7 @@ export default function ProjectSection() {
             viewport={{ once: true }}
             className="hidden md:block pb-2"
           >
-            <p className="text-zinc-500 max-w-[280px] text-sm leading-relaxed">
+            <p className="text-zinc-500 max-w-70 text-sm leading-relaxed">
               Every project is a balance of functional architecture and emotional resonance.
             </p>
           </motion.div>
