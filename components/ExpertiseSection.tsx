@@ -66,7 +66,7 @@ export default function ExpertiseSection() {
       </div>
 
       {/* Subtle Soft Glows for Light Mode */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-zinc-200/50 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-150 h-[600px] bg-zinc-200/50 blur-[150px] rounded-full pointer-events-none" />
     </section>
   );
 }
