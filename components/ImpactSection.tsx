@@ -55,7 +55,7 @@ export default function ImpactSection() {
                 </span>
                 {/* Underline animation */}
                 <motion.div 
-                  className="h-[2px] w-0 bg-black group-hover:w-full transition-all duration-500 mt-2"
+                  className="h-0.5 w-0 bg-black group-hover:w-full transition-all duration-500 mt-2"
                 />
               </div>
               
