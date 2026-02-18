@@ -57,7 +57,7 @@ export default function Subscription() {
     <div className="min-h-screen bg-[#F4F4F5] text-zinc-950 font-sans selection:bg-black selection:text-white pb-32">
       
       {/* Navigation */}
-      <nav className="relative p-8 flex justify-between items-center max-w-[1400px] mx-auto z-10">
+      <nav className="relative p-8 flex justify-between items-center max-w-350 mx-auto z-10">
         <button 
           onClick={() => router.back()}
           className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-zinc-950 transition-all group cursor-pointer"
