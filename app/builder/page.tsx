@@ -5,9 +5,9 @@ import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { 
   Plus, Monitor, Smartphone, ChevronLeft, Menu, Check, 
   Trash2, GripVertical, Image as ImageIcon, Wand2, X, Upload, Download, Link as LinkIcon, Home, FileText,
-  ArrowLeft // Added for the back button
+  ArrowLeft, Sparkles // Added Sparkles for the popup
 } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // Added for navigation
+import { useRouter } from 'next/navigation';
 
 // --- CONFIGURATION ---
 const THEMES = [
@@ -26,7 +26,7 @@ const FONTS = [
 ];
 
 export default function ArchitectBuilder() {
-  const router = useRouter(); // Initialize router
+  const router = useRouter(); 
   
   // --- STATE MANAGEMENT ---
   const [pages, setPages] = useState<any[]>([
@@ -54,11 +54,18 @@ export default function ArchitectBuilder() {
   const [currentFont, setCurrentFont] = useState(FONTS[0]);
   const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('desktop');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [showPremiumPopup, setShowPremiumPopup] = useState(false); // New State for Popup
 
   const activePage = pages.find(p => p.id === activePageId) || pages[0];
 
   // --- PAGE & SECTION ACTIONS ---
   const addPage = () => {
+    // RESTRICTION LOGIC: Max 2 pages for free tier
+    if (pages.length >= 2) {
+      setShowPremiumPopup(true);
+      return;
+    }
+
     const newPage = {
       id: `p-${Date.now()}`,
       name: 'New Page',
@@ -189,6 +196,56 @@ export default function ArchitectBuilder() {
   return (
     <div className={`h-screen w-full flex overflow-hidden ${currentFont.class} bg-[#F4F4F5] text-zinc-900 selection:bg-black selection:text-white`}>
       
+      {/* PREMIUM POPUP MODAL */}
+      <AnimatePresence>
+        {showPremiumPopup && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white rounded-[32px] p-8 max-w-md w-full shadow-2xl relative overflow-hidden text-center"
+            >
+              <button 
+                onClick={() => setShowPremiumPopup(false)}
+                className="absolute top-6 right-6 p-2 hover:bg-zinc-100 rounded-full transition-colors cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3">
+                <Sparkles className="text-white" size={32} />
+              </div>
+
+              <h3 className="text-2xl font-black uppercase tracking-tighter mb-2">Unlock Unlimited Pages</h3>
+              <p className="text-zinc-500 text-sm mb-8 leading-relaxed">
+                You've reached the limit of the free version. Update your subscription to Architect Pro to create unlimited pages and access premium features.
+              </p>
+
+              <div className="flex flex-col gap-3">
+                <button 
+                  onClick={() => router.push('/subscription')}
+                  className="w-full py-4 bg-black text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:scale-[1.02] transition-all cursor-pointer shadow-lg"
+                >
+                  Go to Subscription
+                </button>
+                <button 
+                  onClick={() => setShowPremiumPopup(false)}
+                  className="w-full py-4 bg-zinc-100 text-zinc-500 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-zinc-200 transition-all cursor-pointer"
+                >
+                  Maybe Later
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* SIDEBAR */}
       <motion.aside animate={{ width: isSidebarOpen ? 400 : 0, opacity: isSidebarOpen ? 1 : 0 }} className="bg-white border-r border-zinc-200 flex flex-col z-50 relative overflow-hidden shadow-2xl">
         <div className="w-[400px] h-full flex flex-col">
