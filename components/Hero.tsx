@@ -35,7 +35,7 @@ const PremiumHero = () => {
       <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
       <div className="container mx-auto px-6 pt-40 pb-20 relative z-10">
-        <div className="max-w-[1300px] mx-auto">
+        <div className="max-w-325 mx-auto">
           
           {/* Top Label */}
           <div className="overflow-hidden mb-6">
