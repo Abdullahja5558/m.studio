@@ -141,7 +141,7 @@ const PremiumHero = () => {
           <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest leading-none rotate-90 origin-bottom-right mb-12">
             SCROLL TO EXPLORE
           </span>
-          <div className="w-px h-20 bg-gradient-to-b from-zinc-200 to-transparent" />
+          <div className="w-px h-20 bg-linear-to-b from-zinc-200 to-transparent" />
         </motion.div>
       </div>
     </section>
