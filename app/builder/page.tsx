@@ -229,7 +229,7 @@ export default function ArchitectBuilder() {
 
               <div className="flex flex-col gap-3">
                 <button 
-                  onClick={() => router.push('/subscription')}
+                  onClick={() => router.push('/Subscription')}
                   className="w-full py-4 bg-black text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:scale-[1.02] transition-all cursor-pointer shadow-lg"
                 >
                   Go to Subscription
