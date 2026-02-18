@@ -112,7 +112,7 @@ export default function PremiumNavbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-4 right-4 bg-white rounded-[32px] p-8 border border-zinc-100 shadow-2xl pointer-events-auto md:hidden"
+            className="absolute top-24 left-4 right-4 bg-white rounded-4xl p-8 border border-zinc-100 shadow-2xl pointer-events-auto md:hidden"
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
