@@ -27,7 +27,7 @@ export default function PremiumNavbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex justify-center z-[100] pt-4 md:pt-6 px-4 pointer-events-none">
+    <nav className="fixed top-0 left-0 w-full flex justify-center z-100 pt-4 md:pt-6 px-4 pointer-events-none">
       <motion.div
         initial={false}
         animate={{
