@@ -38,7 +38,7 @@ export default function PremiumFooter() {
                 Let's Talk.
               </h2>
               {/* Animated Underline */}
-              <div className="absolute bottom-0 left-0 w-0 h-[4px] md:h-[8px] bg-black transition-all duration-700 ease-in-out group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 w-0 h-1 md:h-[8px] bg-black transition-all duration-700 ease-in-out group-hover:w-full" />
             </motion.div>
           </Link>
         </div>
