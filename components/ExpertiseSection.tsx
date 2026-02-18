@@ -42,7 +42,7 @@ export default function ExpertiseSection() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="w-12 h-[1px] bg-zinc-400" />
+            <div className="w-12 h-px bg-zinc-400" />
             <span className="text-zinc-500 text-[10px] font-black tracking-[0.4em] uppercase">
               Our Expertise
             </span>
