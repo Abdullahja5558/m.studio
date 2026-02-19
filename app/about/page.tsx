@@ -38,7 +38,7 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="flex justify-center items-center gap-2"
           >
-            <span className="w-12 h-[1px] bg-zinc-200"></span>
+            <span className="w-12 h-px bg-zinc-200"></span>
             <span className="text-[10px] font-black uppercase tracking-[0.6em] text-zinc-400 italic">The Manifesto</span>
             <span className="w-12 h-[1px] bg-zinc-200"></span>
           </motion.div>
