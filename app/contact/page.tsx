@@ -76,7 +76,6 @@ const ContactSection = () => {
 
       <div className="max-w-4xl w-full text-center space-y-16 md:space-y-20">
         
-        {/* Header Section */}
         <div className="space-y-6">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center items-center gap-2 mb-2">
             <span className="w-6 md:w-8 h-px bg-[#1A1A1A]/20"></span>
