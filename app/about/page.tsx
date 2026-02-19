@@ -18,7 +18,7 @@ const AboutSection = () => {
   return (
     <section className="min-h-screen bg-[#FAFAFA] py-20 px-6 flex flex-col items-center relative overflow-hidden text-[#1A1A1A] font-sans">
       
-      {/* Back Button - Now uses router.push('/') */}
+ 
       <motion.button 
         initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
