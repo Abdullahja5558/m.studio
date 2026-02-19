@@ -47,7 +47,7 @@ const AboutSection = () => {
             M.Studio <br /> <span className="text-zinc-200">Story.</span>
           </h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -91,8 +91,6 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Counter Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-y border-zinc-100 py-20">
           {stats.map((stat, idx) => (
             <motion.div 
