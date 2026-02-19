@@ -82,7 +82,7 @@ const ContactSection = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center items-center gap-2 mb-2">
             <span className="w-6 md:w-8 h-px bg-[#1A1A1A]/20"></span>
             <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400">Direct Connection</span>
-            <span className="w-6 md:w-8 h-[1px] bg-[#1A1A1A]/20"></span>
+            <span className="w-6 md:w-8 h-px bg-[#1A1A1A]/20"></span>
           </motion.div>
           <h2 className="text-6xl md:text-9xl font-black italic tracking-tighter uppercase leading-[0.8] text-[#1A1A1A]">
             Let's <br /> Build.
