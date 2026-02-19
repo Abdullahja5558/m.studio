@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Crown, Zap, ShieldCheck, Globe } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // Added for routing
+import { useRouter } from 'next/navigation'; 
 
 const AboutSection = () => {
   const router = useRouter(); // Initialize router
