@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation'; 
 
 const ContactSection = () => {
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
   const form = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
