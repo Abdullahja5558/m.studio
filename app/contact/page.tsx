@@ -89,7 +89,7 @@ const ContactSection = () => {
             Inquiry transmitted to ajdeveloperr@gmail.com
           </p>
         </div>
-        
+
         <div className="flex justify-center items-center gap-8 md:gap-16">
           {socials.map((social) => (
             <a 
@@ -105,7 +105,6 @@ const ContactSection = () => {
           ))}
         </div>
 
-        {/* Form Container */}
         <motion.div 
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
