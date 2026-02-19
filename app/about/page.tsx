@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, Crown, Zap, ShieldCheck, Globe } from 'lucide-
 import { useRouter } from 'next/navigation'; 
 
 const AboutSection = () => {
-  const router = useRouter(); // Initialize router
+  const router = useRouter(); 
 
   const stats = [
     { label: "Design Vision", value: "Pure", icon: <Crown size={16} /> },
