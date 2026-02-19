@@ -34,7 +34,7 @@ const ContactSection = () => {
     });
   };
 
-  // Premium WhatsApp Message
+  
   const waMessage = encodeURIComponent("Hello Abdullah! I'm interested in discussing a premium project with you. Let's connect.");
 
   const socials = [
