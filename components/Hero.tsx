@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation'; // Ab iski zaroorat nahi agar aap scroll karwa rahe hain
 
 const PremiumHero = () => {
-  const router = useRouter();
+  // const router = useRouter(); // Isko hata sakte hain ya rehne dein koi masla nahi
 
   const maskTransition = { duration: 1.4, ease: [0.19, 1, 0.22, 1] as const };
 
@@ -24,9 +24,14 @@ const PremiumHero = () => {
     }),
   };
 
+  // --- YE WALA SECTION CHANGE KIYA HAI ---
   const handleNavigation = () => {
-    router.push('/builder');
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
+  // ---------------------------------------
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-[#FAFAFA] overflow-hidden selection:bg-zinc-900 selection:text-white">
