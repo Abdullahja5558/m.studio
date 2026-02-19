@@ -40,7 +40,7 @@ const AboutSection = () => {
           >
             <span className="w-12 h-px bg-zinc-200"></span>
             <span className="text-[10px] font-black uppercase tracking-[0.6em] text-zinc-400 italic">The Manifesto</span>
-            <span className="w-12 h-[1px] bg-zinc-200"></span>
+            <span className="w-12 h-px bg-zinc-200"></span>
           </motion.div>
           
           <h2 className="text-7xl md:text-[10rem] font-black italic tracking-tighter uppercase leading-[0.8] text-[#1A1A1A]">
