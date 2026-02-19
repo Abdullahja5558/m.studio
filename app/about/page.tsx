@@ -47,8 +47,7 @@ const AboutSection = () => {
             M.Studio <br /> <span className="text-zinc-200">Story.</span>
           </h2>
         </div>
-
-        {/* Content Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
