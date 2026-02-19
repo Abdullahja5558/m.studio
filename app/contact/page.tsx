@@ -89,8 +89,7 @@ const ContactSection = () => {
             Inquiry transmitted to ajdeveloperr@gmail.com
           </p>
         </div>
-
-        {/* Social Icons */}
+        
         <div className="flex justify-center items-center gap-8 md:gap-16">
           {socials.map((social) => (
             <a 
