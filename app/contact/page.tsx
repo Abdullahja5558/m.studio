@@ -69,7 +69,7 @@ const ContactSection = () => {
         animate={{ x: 0, opacity: 1 }}
         type="button"
         onClick={() => router.push('/')} // Direct navigation to Home
-        className="absolute top-8 left-6 md:top-10 md:left-12 flex items-center gap-2 group text-[#1A1A1A] z-[100] cursor-pointer hover:opacity-70 transition-all"
+        className="absolute top-8 left-6 md:top-10 md:left-12 flex items-center gap-2 group text-[#1A1A1A] z-100 cursor-pointer hover:opacity-70 transition-all"
       >
         <ArrowLeft size={18} strokeWidth={2.5} className="group-hover:-translate-x-1 transition-transform" />
         <span className="text-[10px] font-black uppercase tracking-[0.3em]">Back to Studio</span>
