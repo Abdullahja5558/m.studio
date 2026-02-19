@@ -107,7 +107,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* Footer Note */}
+
         <div className="py-20 text-center">
             <p className="text-[10px] font-black uppercase tracking-[1em] text-zinc-300">
               M.Studio Architecture © 2026
