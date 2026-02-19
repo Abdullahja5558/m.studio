@@ -7,7 +7,7 @@ import {
   Instagram, Github, MessageCircle, ArrowLeft
 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { useRouter } from 'next/navigation'; // Added this
+import { useRouter } from 'next/navigation'; 
 
 const ContactSection = () => {
   const router = useRouter(); // Initialize the router
