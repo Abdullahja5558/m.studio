@@ -31,7 +31,7 @@ const AboutSection = () => {
 
       <div className="max-w-6xl w-full">
         
-        {/* Main Hero About */}
+       
         <div className="text-center space-y-8 mb-32 pt-20">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
