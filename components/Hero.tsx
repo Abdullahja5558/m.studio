@@ -23,7 +23,7 @@ const PremiumHero = () => {
     }),
   };
 
-  // --- YE WALA SECTION CHANGE KIYA HAI ---
+  
   const handleNavigation = () => {
     const pricingSection = document.getElementById('pricing');
     if (pricingSection) {
