@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-// import { useRouter } from 'next/navigation'; // Ab iski zaroorat nahi agar aap scroll karwa rahe hain
+
 
 const PremiumHero = () => {
   // const router = useRouter(); // Isko hata sakte hain ya rehne dein koi masla nahi
