@@ -30,7 +30,6 @@ const PremiumHero = () => {
       pricingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  // ---------------------------------------
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-[#FAFAFA] overflow-hidden selection:bg-zinc-900 selection:text-white">
