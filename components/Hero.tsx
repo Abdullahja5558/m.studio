@@ -6,8 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 
 const PremiumHero = () => {
-  // const router = useRouter(); // Isko hata sakte hain ya rehne dein koi masla nahi
-
+  
   const maskTransition = { duration: 1.4, ease: [0.19, 1, 0.22, 1] as const };
 
   const signalVariants: Variants = {
