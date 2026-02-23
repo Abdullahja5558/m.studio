@@ -44,7 +44,6 @@ export default function PremiumNavbar() {
         transition={{ type: "spring", stiffness: 100, damping: 20, mass: 1 }}
         className="flex items-center justify-between overflow-hidden relative pointer-events-auto h-16 md:h-20"
       >
-        {/* 1. BRAND / LOGO */}
         <Link href="/" className="flex items-center gap-2 group">
           <motion.span 
             className="font-black tracking-tighter text-black text-2xl md:text-3xl italic"
