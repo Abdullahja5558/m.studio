@@ -125,7 +125,6 @@ const PremiumHero = () => {
         </div>
       </div>
 
-      {/* Sidebar Metadata */}
       <div className="absolute right-12 bottom-12 hidden lg:block overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
