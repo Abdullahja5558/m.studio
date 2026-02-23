@@ -63,7 +63,6 @@ export default function ImpactSection() {
         </div>
       </div>
 
-      {/* 3. SUBTLE QUOTE - Contextual Finish */}
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
