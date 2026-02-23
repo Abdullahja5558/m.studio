@@ -105,7 +105,6 @@ const PremiumHero = () => {
                   onClick={handleNavigation}
                   className="group relative h-44 w-44 rounded-full border border-zinc-200 bg-white overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 z-10 cursor-pointer"
                 >
-                  {/* --- LIQUID WAVE EFFECT --- */}
                   <div className="absolute top-full left-[-10%] w-[200%] h-[200%] bg-black rounded-[40%] transition-all duration-700 ease-in-out group-hover:top-[-10%] group-hover:animate-[wave_70s_infinite_linear] pointer-events-none" />
                   
                   {/* CSS for Animation */}
