@@ -77,7 +77,6 @@ export default function PremiumNavbar() {
           ))}
         </div>
 
-        {/* 3. RIGHT SECTION (ABOUT + MOBILE MENU) */}
         <div className="flex items-center gap-2">
           <Link href="/about" className="hidden md:block">
             <motion.button 
