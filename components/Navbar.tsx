@@ -92,7 +92,6 @@ export default function PremiumNavbar() {
             </motion.button>
           </Link>
 
-          {/* MOBILE TOGGLE */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-3 text-black"
