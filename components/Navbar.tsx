@@ -64,7 +64,6 @@ export default function PremiumNavbar() {
           </AnimatePresence>
         </Link>
 
-        {/* 2. DESKTOP NAV LINKS */}
         <div className="hidden md:flex items-center gap-8 lg:gap-12">
           {navLinks.map((link) => (
             <a 
