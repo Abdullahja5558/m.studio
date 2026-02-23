@@ -50,7 +50,6 @@ export default function ImpactSection() {
                 <span className="text-5xl md:text-7xl font-extrabold tracking-tighter text-zinc-900 group-hover:text-zinc-400 transition-colors duration-500">
                   {stat.value}
                 </span>
-                {/* Underline animation */}
                 <motion.div 
                   className="h-0.5 w-0 bg-black group-hover:w-full transition-all duration-500 mt-2"
                 />
