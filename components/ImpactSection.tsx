@@ -46,7 +46,6 @@ export default function ImpactSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="flex flex-col items-center text-center lg:items-start lg:text-left group cursor-default"
             >
-              {/* Number with subtle hover scale */}
               <div className="relative mb-4">
                 <span className="text-5xl md:text-7xl font-extrabold tracking-tighter text-zinc-900 group-hover:text-zinc-400 transition-colors duration-500">
                   {stat.value}
