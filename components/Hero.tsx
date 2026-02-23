@@ -91,7 +91,6 @@ const PremiumHero = () => {
                 whileHover="hover"
                 className="relative flex items-center justify-center"
               >
-                {/* --- PREMIUM SIGNAL LAYERS --- */}
                 {[0, 1, 2].map((i) => (
                   <motion.div
                     key={i}
