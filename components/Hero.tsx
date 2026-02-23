@@ -50,7 +50,6 @@ const PremiumHero = () => {
             </motion.p>
           </div>
 
-          {/* Headline */}
           <h1 className="text-[clamp(3.5rem,11vw,9rem)] font-extrabold leading-[1.1] tracking-[-0.06em] text-zinc-950">
             <div className="overflow-hidden">
               <motion.span 
