@@ -34,6 +34,7 @@ const PremiumHero = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-[#FAFAFA] overflow-hidden selection:bg-zinc-900 selection:text-white">
       
+      {/* Background Texture */}
       <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
       <div className="container mx-auto px-6 pt-40 pb-20 relative z-10">
@@ -150,4 +151,4 @@ const PremiumHero = () => {
   );
 };
 
-export default PremiumHero;j
+export default PremiumHero;
