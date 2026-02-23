@@ -35,7 +35,6 @@ export default function ImpactSection() {
         </motion.div>
       </div>
 
-      {/* 2. PREMIUM STATS GRID */}
       <div className="container mx-auto px-6 lg:px-24">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-24">
           {STATS.map((stat, index) => (
