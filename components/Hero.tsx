@@ -39,7 +39,6 @@ const PremiumHero = () => {
       <div className="container mx-auto px-6 pt-40 pb-20 relative z-10">
         <div className="max-w-325 mx-auto">
           
-          {/* Top Label */}
           <div className="overflow-hidden mb-6">
             <motion.p 
               initial={{ y: "100%", opacity: 0 }}
