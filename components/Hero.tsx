@@ -114,7 +114,6 @@ const PremiumHero = () => {
                     }
                   `}</style>
 
-                  {/* Icon and Text */}
                   <div className="relative z-10 flex flex-col items-center text-zinc-950 group-hover:text-white transition-colors duration-500">
                     <ArrowUpRight size={38} className="mb-2 transition-transform duration-500 group-hover:rotate-45" />
                     <span className="text-[10px] font-black uppercase tracking-[0.2em]">Build Now</span>
