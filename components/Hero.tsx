@@ -101,7 +101,6 @@ const PremiumHero = () => {
                   />
                 ))}
 
-                {/* Main Button with Liquid Animation */}
                 <button 
                   onClick={handleNavigation}
                   className="group relative h-44 w-44 rounded-full border border-zinc-200 bg-white overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 z-10 cursor-pointer"
