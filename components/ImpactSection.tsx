@@ -14,7 +14,6 @@ export default function ImpactSection() {
   return (
     <section className="bg-[#FAFAFA] py-24 overflow-hidden">
       
-      {/* 1. INFINITE MARQUEE - Luxury "Moving" Text */}
       <div className="flex overflow-hidden whitespace-nowrap border-y border-zinc-200 py-10 mb-32 bg-white">
         <motion.div 
           animate={{ x: [0, -1000] }}
